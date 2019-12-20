@@ -19,7 +19,7 @@
 import io
 import math
 import os
-from StringIO import StringIO
+from io import StringIO
 import numpy as np
 import PIL
 import tensorflow as tf
@@ -63,7 +63,7 @@ def read_annotation(path):
     h, w = x.shape
     im = PIL.Image.fromarray(x)
 
-  output = StringIO()
+  output = io.BytesIO()
   im.save(output, format='png')
   png_string = output.getvalue()
   output.close()
